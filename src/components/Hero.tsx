@@ -1,15 +1,30 @@
+import { useEffect, useState } from "react";
 import meImg from "../assets/me.jpg";
 
 function Hero() {
+	const [showImage, setShowImage] = useState(false);
+	const [showText, setShowText] = useState(false);
+
+	useEffect(() => {
+		setTimeout(() => setShowImage(true), 200);
+		setTimeout(() => setShowText(true), 600);
+	}, []);
+
 	return (
 		<section className="min-h-screen flex items-center justify-center bg-transparent p-0">
 			<div className="flex items-center">
 				<img
 					src={meImg}
 					alt="Me"
-					className="w-128 h-128 object-cover mr-8 mask-origin-content"
+					className={`w-128 h-128 object-cover rounded-full mr-8 transition-opacity duration-700 ${
+						showImage ? "opacity-100" : "opacity-0"
+					}`}
 				/>
-				<div>
+				<div
+					className={`transition-all duration-700 ${
+						showText ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+					}`}
+				>
 					<h1 className="text-3xl font-bold mb-2">
 						Hi, I’m Eduardo — a Computer Science Student & Developer
 					</h1>
