@@ -44,8 +44,8 @@ export function LetterCollision() {
     ScrollTrigger.addEventListener('refreshInit', () => ScrollTrigger.refresh());
   }, []);
   return (
-    <div ref={ref} className="ml-8 scroll-smooth">
-      <div className="-mt-28 mb-36 flex h-screen flex-col justify-end lg:mb-24">
+    <div ref={ref} className="scroll-smooth">
+      <div className="-mt-34 mb-36 flex h-screen flex-col justify-end lg:mb-30">
         <div className="flex flex-wrap">
           <LetterDisplay word={lines[0]} />
           <div className="w-4 sm:w-10" />

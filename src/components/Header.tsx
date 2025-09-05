@@ -1,6 +1,6 @@
 function Header() {
 	return (
-		<header className="text-white px-6 py-4 flex justify-between items-center shadow-md">
+		<header className="text-white px-8 py-6 flex justify-between items-center shadow-md">
 			<a href="#home" className="text-2xl font-bold text-blue-400">Eduardo Cortes</a>
 
 			<nav>

@@ -3,7 +3,7 @@ import { LetterCollision } from "./LetterCollision";
 
 function Hero() {
 	return (
-		<div>
+		<div className="px-8 py-6">
 			<LetterCollision />
 		</div>
 	);
