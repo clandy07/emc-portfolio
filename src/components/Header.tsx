@@ -1,7 +1,7 @@
 function Header() {
 	return (
 		<header className="text-white px-8 py-6 flex justify-between items-center shadow-md">
-			<a href="#home" className="text-2xl font-bold text-blue-400">Eduardo Cortes</a>
+			<a href="#home" className="text-2xl font-bold">Eduardo Cortes</a>
 
 			<nav>
 				<ul className="flex gap-6">

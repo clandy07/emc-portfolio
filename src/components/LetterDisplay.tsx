@@ -12,7 +12,7 @@ export function LetterDisplay({ word }: { word: string }) {
       {word.split('').map((char, i) => (
         <div
           key={i}
-          className="letter text-6xl font-semibold xs:text-[90px] md:text-[180px]"
+          className="letter text-3xl font-semibold xs:text-[60px] md:text-[120px] text-blue-400"
           data-speed={getRandomSpeed()}
         >
           {char}
