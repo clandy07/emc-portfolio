@@ -33,15 +33,15 @@ function Hobbies() {
             <h2 className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">
                 "Touching Grass" Gallery
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 px-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 px-6 max-w-6xl mx-auto">
                 {hobbies.map((hobby, index) => (
                     <div
                         key={index}
                         className="group [perspective:1000px] w-full h-64"
                     >
-                        <div className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                        <div className="relative h-70 md:w-full md:h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                             {/* Front Side */}
-                            <div className="absolute inset-0 bg-white dark:bg-gray-800 border rounded-xl overflow-hidden shadow-md flex flex-col justify-center items-center [backface-visibility:hidden]">
+                            <div className="absolute inset-0 bg-white dark:bg-gray-800 border rounded-xl overflow-hidden shadow-md flex flex-col justify-center items-center">
                                 <img
                                     src={hobby.img}
                                     alt={hobby.title}
@@ -49,7 +49,7 @@ function Hobbies() {
                                 />
                             </div>
                             {/* Back Side */}
-                            <div className="absolute inset-0 bg-blue-500 text-white rounded-xl flex flex-col justify-center items-center p-4 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                            <div className="absolute inset-0 backdrop-blur-sm bg-zinc-950/75 text-white rounded-xl flex flex-col justify-center items-center p-4 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
                                 <h3 className="text-xl font-bold mb-2">{hobby.title}</h3>
                                 <p className="text-sm">{hobby.description}</p>
                             </div>
