@@ -11,6 +11,9 @@ function Header() {
                         <a href="#about" className="hover:text-zinc-300 transition-colors">About</a>
                     </li>
                     <li>
+                        <a href="#skills" className="hover:text-zinc-300 transition-colors">Skills</a>
+                    </li>
+                    <li>
                         <a href="#projects" className="hover:text-zinc-300 transition-colors">Projects</a>
                     </li>
                     <li>

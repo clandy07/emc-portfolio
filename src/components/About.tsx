@@ -15,8 +15,8 @@ function About() {
                         </div>
                         {/* Back Side */}
                         <div className="absolute inset-0 backdrop-blur-sm bg-zinc-950/75 text-white rounded-full flex flex-col justify-center items-center p-4 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
-                            <h3 className="text-xl font-bold mb-2">TEST</h3>
-                            <p className="text-sm">TEST</p>
+                            <h3 className="text-xl font-bold mb-2">Hello!</h3>
+                            <p className="text-sm">Bet you weren't expecting that, huh?</p>
                         </div>
                     </div>
                 </div>
