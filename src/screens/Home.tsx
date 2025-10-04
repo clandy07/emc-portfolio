@@ -1,5 +1,5 @@
 "use client";
-import { LetterCollision } from "./LetterCollision";
+import { LetterCollision } from "../components/LetterCollision";
 
 function Home() {
 	return (

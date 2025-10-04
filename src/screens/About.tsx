@@ -1,5 +1,5 @@
 'use client';
-import Hobbies from './Hobbies';
+import Hobbies from '../components/Hobbies';
 import pp from '../assets/me.jpg';
 
 
