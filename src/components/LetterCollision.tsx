@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useEffect, useRef } from 'react';
@@ -24,7 +24,7 @@ function animateLettersOnScroll(ref: React.RefObject<HTMLDivElement | null>) {
       y: (1 - speed) * ScrollTrigger.maxScroll(window),
       rotation: getRandomRotation(),
       ease: 'power2.out',
-      duration: 0.8, 
+      duration: 0.8,
       scrollTrigger: {
         trigger: document.documentElement,
         start: 0,
@@ -41,17 +41,16 @@ export function LetterCollision() {
   useEffect(() => {
     if (!ref.current) return;
     animateLettersOnScroll(ref);
-    ScrollTrigger.addEventListener('refreshInit', () => ScrollTrigger.refresh());
   }, []);
   return (
     <div ref={ref} className="scroll-smooth">
       <div className="-mt-34 mb-36 flex h-screen flex-col justify-end lg:mb-30">
-        <div className="flex flex-wrap">
+        <div className="flex">
           <LetterDisplay word={lines[0]} />
           <div className="w-4 sm:w-10" />
           <LetterDisplay word={lines[1]} />
         </div>
-        <div className="flex flex-wrap">
+        <div className="flex">
           <LetterDisplay word={lines[2]} />
           <div className="w-4 sm:w-10" />
           <LetterDisplay word={lines[3]} />

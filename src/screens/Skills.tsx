@@ -55,12 +55,12 @@ function Skills() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-[#0F172A] to-slate-900" />
       
       {/* Animated gradient orbs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-green-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
       
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
@@ -75,7 +75,7 @@ function Skills() {
           transition={{ duration: 0.8 }}
         >
           <motion.span 
-            className="text-sm font-mono text-sky-400 tracking-widest uppercase mb-4 block"
+            className="text-sm font-mono text-blue-500 tracking-widest uppercase mb-4 block"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -83,10 +83,10 @@ function Skills() {
           >
             My Expertise
           </motion.span>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-8 bg-gradient-to-r from-white via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl pb-2 font-bold mb-8 bg-gradient-to-r from-gray-200 via-slate-300 to-slate-500 bg-clip-text text-transparent">
             What I Bring<br />to the Table
           </h1>
-          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
             Throughout my studies and projects, I've gained hands-on experience with various programming languages and frameworks. Each skill here represents a step in my journey to becoming a well-rounded developer.
           </p>
         </motion.div>
@@ -103,8 +103,8 @@ function Skills() {
             >
               {/* Category Header */}
               <div className="flex items-center gap-4 mb-8">
-                <h2 className="text-xl md:text-2xl font-semibold text-white">{category.title}</h2>
-                <div className="flex-1 h-px bg-gradient-to-r from-zinc-700 to-transparent" />
+                <h2 className="text-xl md:text-2xl font-semibold text-gray-200">{category.title}</h2>
+                <div className="flex-1 h-px bg-gradient-to-r from-slate-700 to-transparent" />
               </div>
               
               {/* Skills Grid */}
@@ -132,9 +132,9 @@ function Skills() {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-            <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" style={{ animationDelay: "0.2s" }} />
-            <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" style={{ animationDelay: "0.4s" }} />
+            <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" style={{ animationDelay: "0.2s" }} />
+            <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" style={{ animationDelay: "0.4s" }} />
           </div>
         </motion.div>
       </div>
