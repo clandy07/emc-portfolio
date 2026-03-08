@@ -6,6 +6,7 @@ import About from './screens/About';
 import Skills from './screens/Skills';
 import Projects from './screens/Projects'; 
 import Contacts from './screens/Contacts';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -27,6 +28,9 @@ function App() {
       </section>
       <section id="contacts" className="snap-start">
         <Contacts />
+      </section>
+      <section className="snap-start">
+        <Footer />
       </section>
     </main>
     </>

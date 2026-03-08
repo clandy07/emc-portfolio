@@ -25,7 +25,7 @@ function Hobbies() {
         {
             title: "Sports",
             img: sportImg,
-            description: "I stay active by playing basketball and other sports, which help me build teamwork and keep my energy high.",
+            description: "I stay active by playing pickleball and other sports, which help me build teamwork and keep my energy high.",
         },
     ];
 
@@ -92,7 +92,7 @@ function Hobbies() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
             >
-                Hover over the cards to learn more ✨
+                Hover over the cards to learn more!
             </motion.p>
         </section>
     );

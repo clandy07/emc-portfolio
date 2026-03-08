@@ -35,8 +35,8 @@ function About() {
                             </div>
                             {/* Back Side */}
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/90 to-green-500/90 backdrop-blur-sm rounded-full flex flex-col justify-center items-center p-8 text-center [transform:rotateY(180deg)] [backface-visibility:hidden] border-4 border-white/20">
-                                <h3 className="text-2xl font-bold text-white mb-3">Hello! 👋</h3>
-                                <p className="text-white/90 text-sm">Bet you weren't expecting that, huh?</p>
+                                <h3 className="text-2xl font-bold text-white mb-3">Hello!</h3>
+                                <p className="text-white/90 text-sm">Nice to meet you!</p>
                             </div>
                         </div>
                     </motion.div>
