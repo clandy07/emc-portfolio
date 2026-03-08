@@ -63,11 +63,6 @@ function Footer() {
                         <p className="text-slate-500 text-sm">
                             © {currentYear} Eduardo Cortes. All rights reserved.
                         </p>
-                        <div className="flex items-center gap-2">
-                            <span className="text-slate-600 text-sm">Built with</span>
-                            <span className="text-amber-500">♥</span>
-                            <span className="text-slate-600 text-sm">using React & Tailwind</span>
-                        </div>
                     </div>
                 </div>
             </div>

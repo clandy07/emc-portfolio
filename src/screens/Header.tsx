@@ -6,6 +6,7 @@ import EC from "../assets/ec.svg";
 function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,6 +25,17 @@ function Header() {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Close mobile menu on resize to desktop
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) {
+                setMobileMenuOpen(false);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     const navItems = [
@@ -103,12 +115,71 @@ function Header() {
                 <motion.button
                     className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 text-gray-200"
                     whileTap={{ scale: 0.9 }}
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle menu"
                 >
-                    <span className="w-6 h-0.5 bg-gray-200 rounded-full" />
-                    <span className="w-6 h-0.5 bg-gray-200 rounded-full" />
-                    <span className="w-4 h-0.5 bg-gray-200 rounded-full self-end mr-2" />
+                    <motion.span 
+                        className="w-6 h-0.5 bg-gray-200 rounded-full"
+                        animate={mobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+                        transition={{ duration: 0.2 }}
+                    />
+                    <motion.span 
+                        className="w-6 h-0.5 bg-gray-200 rounded-full"
+                        animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                    />
+                    <motion.span 
+                        className="w-6 h-0.5 bg-gray-200 rounded-full"
+                        animate={mobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+                        transition={{ duration: 0.2 }}
+                    />
                 </motion.button>
             </div>
+
+            {/* Mobile Menu */}
+            <motion.nav
+                className="md:hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-md border-b border-slate-700/30 overflow-hidden"
+                initial={false}
+                animate={mobileMenuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
+                <ul className="flex flex-col px-8 py-6 gap-2">
+                    {navItems.map((item, index) => (
+                        <motion.li
+                            key={item.name}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={mobileMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                            transition={{ duration: 0.3, delay: index * 0.1 }}
+                        >
+                            <a
+                                href={item.href}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                                    activeSection === item.href.slice(1)
+                                        ? 'text-gray-200 bg-gradient-to-r from-blue-500/20 to-green-500/20 border border-blue-500/30'
+                                        : 'text-slate-400 hover:text-gray-200 hover:bg-slate-800/50'
+                                }`}
+                            >
+                                {item.name}
+                            </a>
+                        </motion.li>
+                    ))}
+                    <motion.li
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={mobileMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                        transition={{ duration: 0.3, delay: 0.4 }}
+                        className="mt-4"
+                    >
+                        <a
+                            href="#contacts"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block text-center px-5 py-3 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl text-base font-semibold text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+                        >
+                            Let's Talk
+                        </a>
+                    </motion.li>
+                </ul>
+            </motion.nav>
         </motion.header>
     );
 }
