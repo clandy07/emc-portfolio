@@ -3,10 +3,18 @@ import uscVT from '../assets/uscVT.jpeg';
 import RD from '../assets/RD.jpeg';
 import mup from '../assets/mUp.jpeg';
 import sl from '../assets/sl2.png';
+import pikol from '../assets/pikol.png';
 
 
 function Projects() {
     const projects = [
+         {
+            title: "PikolPal",
+            description: "A mobile map-first app that siimplifies the process of finding and renting pickleball courts in Cebu City, built with React Native and Expo.",
+            tech: ["React Native", "Expo", "Supabase"],
+            image: pikol,
+            view: "https://beta.pikolpal.com/",
+        },
         {
             title: "USC Virtual Tour and Events Map",
             description: "An interactive web application that allows users to explore the University of San Carlos - Talamban Campus through a virtual map while viewing important campus locations and upcoming events using Google Maps APIs.",
@@ -127,13 +135,24 @@ function Projects() {
 
                                 {/* Links */}
                                 <div className="flex items-center gap-4">
-                                    <a
-                                        href={project.github}
-                                        className="flex items-center gap-2 text-sm text-slate-400 hover:text-green-400 transition-colors duration-300"
-                                    >
-                                        <span>GitHub</span>
-                                        <span>↗</span>
-                                    </a>
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            className="flex items-center gap-2 text-sm text-slate-400 hover:text-green-400 transition-colors duration-300"
+                                        >
+                                            <span>GitHub</span>
+                                            <span>↗</span>
+                                        </a>
+                                    )}
+                                    {project.view && (
+                                        <a
+                                            href={project.view}
+                                            className="flex items-center gap-2 text-sm text-slate-400 hover:text-blue-400 transition-colors duration-300"
+                                        >
+                                            <span>View Project</span>
+                                            <span>↗</span>
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>
